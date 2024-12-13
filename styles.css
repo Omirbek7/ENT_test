@@ -1,0 +1,126 @@
+/* Основной стиль для всей страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f9ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #534B52, #4E5758, #915D6B, #696A93);
+  }
+  
+  /* Контейнер */
+  .container {
+    width: 90%;
+    max-width: 800px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  /* Заголовок */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #2c7be5;
+  }
+  
+  /* Основной блок вопросов */
+  main {
+    margin-bottom: 20px;
+  }
+  
+  .question {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .question p {
+    font-size: 18px;
+    margin: 0 0 10px;
+  }
+  
+  ul.options {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.options li {
+    margin-bottom: 8px;
+  }
+  
+  ul.options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  ul.options input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Кнопка завершения */
+  footer {
+    text-align: center;
+  }
+  
+  button {
+    background: #2c7be5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #2563c7;
+  }
+  
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+  }
+
+  /* Контейнер для полоски прогресса */
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Полоска прогресса */
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.5s ease;
+  }
+  
+  /* Мотивационное сообщение */
+  .motivational-message {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #555;
+    text-align: center;
+  }
+  
