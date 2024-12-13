@@ -123,4 +123,37 @@ body {
     color: #555;
     text-align: center;
   }
+
+.avatar {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .avatar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%; /* Сделает форму круглой */
+            background-color: #f0f0f0; /* Цвет фона */
+            border: 3px solid #3498db; /* Синий бордюр */
+            box-shadow: 0 0 0 5px #ffffff, 0 0 0 7px #3498db; /* Двойная тень для эффекта */
+        }
+
+        .avatar::after {
+            content: 'Т';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px; /* Размер буквы */
+            color: #3498db; /* Цвет буквы */
+            font-family: Arial, sans-serif; /* Шрифт */
+            font-weight: bold;
+        }
+
   
