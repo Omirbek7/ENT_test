@@ -1,9 +1,8 @@
-// Вопросы
 const questions = [
   {
     question: "Что является единицей наследственности?",
     options: ["Ген", "Клетка", "Организм", "Белок"],
-    correctAnswer: "Ген", // Указываем правильный ответ текстом
+    correctAnswer: "Ген",
   }, //1
   {
     question: "Какой газ растения поглощают из атмосферы?",
@@ -16,111 +15,110 @@ const questions = [
     correctAnswer: "46",
   }, //3
   {
-    question: "Сколько kamer v serdce у человека?",
+    question: "Сколько камер в сердце у человека?",
     options: ["4", "3", "1", "2"],
     correctAnswer: "4",
   }, //4
   {
-    question: "Сколько neyronov v kore bolshih polushariy у человека?",
-    options: ["16 mlrd", "86 mlrd", "31 mlrd", "12 mlrd"],
-    correctAnswer: "16 mlrd",
+    question: "Сколько нейронов в коре больших полушарий у человека?",
+    options: ["16 млрд", "86 млрд", "31 млрд", "12 млрд"],
+    correctAnswer: "16 млрд",
   }, //5
   {
-    question: "Сколько par cherepno-mozgovyh nervov у человека?",
+    question: "Сколько пар черепно-мозговых нервов у человека?",
     options: ["14", "15", "12", "13"],
     correctAnswer: "12",
   }, //6
   {
-    question: "Сколько vesit golovnoy mozg у человека?",
-    options: ["1-2 kg", "700-800 g", "2-2,5 kg", "850-1000 g"],
-    correctAnswer: "1-2 kg",
+    question: "Сколько весит головной мозг у человека?",
+    options: ["1-2 кг", "700-800 г", "2-2,5 кг", "850-1000 г"],
+    correctAnswer: "1-2 кг",
   }, //7
   {
-    question: "Сколько vesit spinnoy mozg у человека?",
-    options: ["~30 g", "~50 g", "~45 mg", "~200 g"],
-    correctAnswer: "~30 g",
+    question: "Сколько весит спинной мозг у человека?",
+    options: ["~30 г", "~50 г", "~45 мг", "~200 г"],
+    correctAnswer: "~30 г",
   }, //8
   {
-    question: "Сколько neyronov v golovnom mozge у человека?",
-    options: ["31 mlrd", "58 mlrd", "86 mlrd", "70 mlrd"],
-    correctAnswer: "86 mlrd",
+    question: "Сколько нейронов в головном мозге у человека?",
+    options: ["31 млрд", "58 млрд", "86 млрд", "70 млрд"],
+    correctAnswer: "86 млрд",
   }, //9
   {
-    question: "Gormon shishkovidnoy zhelezy у человека?",
-    options: ["Melatonin", "Melanin", "Timozin", "Kortizol"],
-    correctAnswer: "Melatonin",
+    question: "Гормон шишковидной железы у человека?",
+    options: ["Мелатонин", "Меланин", "Тимозин", "Кортизол"],
+    correctAnswer: "Мелатонин",
   }, //10
   {
-    question: "Chto voznikaet pri nedostatochnom vydelenii Somatotropina у человека?",
-    options: ["Gigantizm", "Karlikovost", "Akromegaliya", "Geterohromiya"],
-    correctAnswer: "Karlikovost",
+    question: "Что возникает при недостаточном выделении Соматотропина у человека?",
+    options: ["Гигантизм", "Карликовость", "Акромегалия", "Гетерохромия"],
+    correctAnswer: "Карликовость",
   }, //11
   {
-    question: "Kolichestvo pervichnoy mochi v organizme",
-    options: ["100-120 l", "190-210 l", "150-180 l", "1,5-2 l"],
-    correctAnswer: "150-180 l",
+    question: "Количество первичной мочи в организме",
+    options: ["100-120 л", "190-210 л", "150-180 л", "1,5-2 л"],
+    correctAnswer: "150-180 л",
   }, //12
   {
-    question: "Kolichestvo vtorichnoy mochi v organizme",
-    options: ["100-120 l", "4-5 l", "15 l", "1,5-2 l"],
-    correctAnswer: "1,5-2 l",
+    question: "Количество вторичной мочи в организме",
+    options: ["100-120 л", "4-5 л", "15 л", "1,5-2 л"],
+    correctAnswer: "1,5-2 л",
   }, //13
   {
-    question: "Kolichestvo eritrocitov v mm^3 krovi",
-    options: ["2 mln", "4,5-5 mln", "4-8 tys", "150-400 tys"],
-    correctAnswer: "4,5-5 mln",
+    question: "Количество эритроцитов в мм^3 крови",
+    options: ["2 млн", "4,5-5 млн", "4-8 тыс", "150-400 тыс"],
+    correctAnswer: "4,5-5 млн",
   }, //14
   {
-    question: "Kolichestvo leykocitov v mm^3 krovi",
-    options: ["2 mln", "180 tys", "4-9 tys", "2-3 tys"],
-    correctAnswer: "4-9 tys",
+    question: "Количество лейкоцитов в мм^3 крови",
+    options: ["2 млн", "180 тыс", "4-9 тыс", "2-3 тыс"],
+    correctAnswer: "4-9 тыс",
   }, //15
   {
-    question: "Kolichestvo trombocitov v mm^3 krovi",
-    options: ["4-5 mln", "150-400 tys", "4-9 tys", "15-17 tys"],
-    correctAnswer: "150-400 tys",
+    question: "Количество тромбоцитов в мм^3 крови",
+    options: ["4-5 млн", "150-400 тыс", "4-9 тыс", "15-17 тыс"],
+    correctAnswer: "150-400 тыс",
   }, //16
   {
-    question: "Universalniy donor:",
+    question: "Универсальный донор:",
     options: ["I (0)", "IV (AB)", "II (A0)", "III (BB)"],
     correctAnswer: "I (0)",
   }, //17
   {
-    question: "Universalniy recepient:",
+    question: "Универсальный реципиент:",
     options: ["I (0)", "IV (AB)", "II (AA)", "III (B0), (BB)"],
     correctAnswer: "IV (AB)",
   }, //18
   {
-    question: "Kletki krovi, otvechayushiye za immunnuyu sistemu:",
-    options: ["Trombocity", "Eritrocity", "Leykocity", "Miocity"],
-    correctAnswer: "Leykocity",
+    question: "Клетки крови, отвечающие за иммунную систему:",
+    options: ["Тромбоциты", "Эритроциты", "Лейкоциты", "Миоциты"],
+    correctAnswer: "Лейкоциты",
   }, //19
   {
-    question: "Kletki krovi, krasnogo cveta, dvuyako-vognutoy formy:",
-    options: ["Trombocity", "Eritrocity", "Leykocity", "Osteocity"],
-    correctAnswer: "Eritrocity",
+    question: "Клетки крови, красного цвета, двояковогнутой формы:",
+    options: ["Тромбоциты", "Эритроциты", "Лейкоциты", "Остеобласты"],
+    correctAnswer: "Эритроциты",
   }, //20
   {
-    question: "Formenniye kletki krovi, sostavlyayut __% krovi:",
+    question: "Форменные клетки крови составляют __% крови:",
     options: ["33%", "66-67%", "55%", "45%"],
     correctAnswer: "45%",
   }, //21
   {
-    question: "V plazme soderzhitsya __% vody:",
+    question: "В плазме содержится __% воды:",
     options: ["90-92%", "80%", "55%", "70%"],
     correctAnswer: "90-92%",
   }, //22
   {
-    question: "Kletki krovi, krasnogo cveta, dvuyako-vognutoy formy zhivut:",
-    options: ["120 sutok", "7-10 dney", "neskolko let", "neskolko chasov"],
-    correctAnswer: "120 sutok",
+    question: "Клетки крови, красного цвета, двояковогнутой формы живут:",
+    options: ["120 суток", "7-10 дней", "несколько лет", "несколько часов"],
+    correctAnswer: "120 суток",
   }, //23
   {
-    question: "Kletki krovi, trombocity zhivut:",
-    options: ["7-10 dney", "30 dney", "5 let", "neskolko chasov"],
-    correctAnswer: "7-10 dney",
-  }, //24
-  // Добавь ещё вопросы
+    question: "Клетки крови, тромбоциты живут:",
+    options: ["7-10 дней", "30 дней", "5 лет", "несколько часов"],
+    correctAnswer: "7-10 дней",
+  } //24
 ];
 
 // Перемешивание массива
