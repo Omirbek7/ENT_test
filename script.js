@@ -147,7 +147,7 @@ function getRandomQuestions(questions, count = 20) {
   return shuffled.slice(0, Math.min(count, questions.length));
 }
 
-let timeLeft = 30; // Время в секундах (5 минут)
+let timeLeft = 60; // Время в секундах (5 минут)
 let timerId;
 
 function updateTimerDisplay() {
