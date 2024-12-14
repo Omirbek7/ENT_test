@@ -118,7 +118,52 @@ const questions = [
     question: "Клетки крови, тромбоциты живут:",
     options: ["7-10 дней", "30 дней", "5 лет", "несколько часов"],
     correctAnswer: "7-10 дней",
-  } //24
+  }, //24
+  {
+  question: "Участвует в дыхании:",
+  options: ["Диафрагма", "Плевра", "Сердечная мышца", "Сухожилие"],
+  correctAnswer: "Диафрагма",
+  }, //25
+  {
+    question: "Бактерии вызывающие болезни:",
+    options: ["Молочнокислые", "Патогенные", "Цианобактерии", "Почвенные"],
+    correctAnswer: "Патогенные",
+  }, //26
+  {
+    question: "При скрещивании гетерозиготы с рецессивной гомозиготой, вероятность проявления рецессивного признака составляет:",
+    options: ["20%", "30%", "50%", "40%"],
+    correctAnswer: "50%",
+  }, //27
+  {    
+    question: "Гормон участвующий в процессах роста:",
+    options: ["Инсулин", "Глюкагон", "Тимозин", "Адреналин"],
+    correctAnswer: "Тимозин",
+  }, //28
+  {    
+    question: "Всасывает в кровь только воду и соли:",
+    options: ["Тонкий кишечник", "Толстый кишечник", "Глотка", "Пищевод"],
+    correctAnswer: "Толстый кишечник",
+  }, //29
+  {    
+    question: "Двухкамерное сердце имеет:",
+    options: ["Лягушка", "Голубь", "Окунь", "Собака"],
+    correctAnswer: "Окунь",
+  }, //30
+  {    
+    question: "Люди с первой группой крови, могут принимать кровь группы:",
+    options: ["III (BB, B0)", "II (AA, A0)", "IV (AB)", "I (0)"],
+    correctAnswer: "I (0)",
+  }, //31
+  {    
+    question: "Слияние двух половых клеток:",
+    options: ["Гаметогенез", "Развитие", "Оплодотворение", "Овогенез"],
+    correctAnswer: "Оплодотворение",
+  }, //32
+  {    
+    question: "Водоросль несколько раз побыбавшая в космосе:",
+    options: ["Хламидомонада", "Хлорелла", "Глеокапса", "Диатом"],
+    correctAnswer: "Хлорелла",
+  } //33
 ];
 
 const doubleQuestions = [
@@ -142,7 +187,7 @@ function shuffleArray(array) {
 }
 
 // Получение 20 случайных вопросов (или меньше, если в массиве меньше 20)
-function getRandomQuestions(questions, count = 20) {
+function getRandomQuestions(questions, count = 30) {
   const shuffled = shuffleArray(questions);
   return shuffled.slice(0, Math.min(count, questions.length));
 }
@@ -211,7 +256,7 @@ function endQuiz() {
 // Генерация теста
 function generateQuiz() {
   const quizContainer = document.getElementById("questions");
-  const selectedSingleQuestions = getRandomQuestions(questions, 20);
+  const selectedSingleQuestions = getRandomQuestions(questions, 30);
   const selectedDoubleQuestions = getRandomQuestions(doubleQuestions, 10);
   
   quizContainer.innerHTML = ""; // Очищаем контейнер перед заполнением
