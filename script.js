@@ -183,9 +183,10 @@ function generateQuiz() {
     q.shuffledCorrectAnswer = shuffledOptions.indexOf(q.correctAnswer);
   });
 
-  // Добавляем вопросы с двумя правильными ответами
+ // Добавляем вопросы с двумя правильными ответами
   selectedDoubleQuestions.forEach((q, index) => {
     const shuffledOptions = shuffleArray([...q.options]);
+    const correctIndices = q.correctAnswer.map(ans => shuffledOptions.indexOf(ans));
 
     const questionDiv = document.createElement("div");
     questionDiv.classList.add("question");
@@ -194,7 +195,7 @@ function generateQuiz() {
       <ul class="options">
         ${shuffledOptions
           .map(
-            (opt) => `
+            (opt, optIndex) => `
           <li>
             <label>
               <input type="checkbox" name="q${index + 20}" value="${opt}" onchange="limitCheckboxes(this)">
@@ -208,7 +209,7 @@ function generateQuiz() {
     `;
 
     quizContainer.appendChild(questionDiv);
-    q.shuffledCorrectAnswer = shuffledOptions.map((opt, idx) => q.correctAnswer.includes(opt) ? idx : null).filter(idx => idx !== null);
+    q.shuffledCorrectAnswer = correctIndices; // Сохраняем индексы правильных ответов после перемешивания
   });
 
   return { single: selectedSingleQuestions, double: selectedDoubleQuestions };
@@ -240,14 +241,17 @@ function checkAnswers(questions) {
   questions.double.forEach((q, index) => {
     const selectedOptions = Array.from(document.querySelectorAll(`input[name="q${index + 20}"]:checked`));
     const selectedValues = selectedOptions.map(option => option.value);
+    const correctValues = q.options.filter((_, idx) => q.shuffledCorrectAnswer.includes(idx));
+
     let correctCount = 0;
-    q.correctAnswer.forEach(correct => {
+    correctValues.forEach(correct => {
       if (selectedValues.includes(correct)) {
         correctCount++;
       }
     });
-    
-    score += correctCount; // Добавляем по 1 баллу за каждый правильный ответ
+
+    // Добавляем баллы только за правильно выбранные ответы, максимум 2 балла за вопрос
+    score += Math.min(correctCount, 2);
   });
 
   return score;
