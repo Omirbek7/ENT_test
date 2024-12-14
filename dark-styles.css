@@ -1,0 +1,93 @@
+/* Темная тема */
+body {
+    background: linear-gradient(to bottom, #121212, #1C1C1C);
+    color: #E0E0E0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: #1A1A1A;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #FFFFFF;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question {
+    border-bottom: 1px solid #444;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    color: #F0F0F0; /* Сделано чуть ярче белым */
+    font-size: 18px;
+}
+
+ul.options label {
+    color: #E5E5E5; /* Сделано чуть ярче белым */
+    font-size: 16px;
+    display: block;
+    padding: 5px 0;
+}
+
+button {
+    background: #03DAC6;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background: #028476;
+}
+
+#result {
+    color: #FFFFFF; /* Убрали фиолетовый, заменили на белый */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.progress-bar-container {
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    background-color: #03DAC6;
+    height: 100%;
+    width: 50%; /* Example width */
+}
+
+.motivational-message {
+    color: #E5E5E5; /* Сделано чуть ярче белым */
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+#timer {
+    color: #03DAC6;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
