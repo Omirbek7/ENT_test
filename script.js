@@ -484,3 +484,34 @@ document.getElementById("submit-btn").addEventListener("click", () => {
   timeLeft = -1; // Это заставит таймер мгновенно истечь
   countdown(); // Вызываем countdown для немедленного завершения теста
 });
+
+//new
+
+// Функция для переключения темы
+function toggleTheme() {
+    const darkStylesheet = document.getElementById('dark-styles');
+    
+    if (darkStylesheet) {
+        darkStylesheet.disabled = !darkStylesheet.disabled;
+    } else {
+        const link = document.createElement('link');
+        link.id = 'dark-styles';
+        link.rel = 'stylesheet';
+        link.href = 'dark-styles.css';
+        document.head.appendChild(link);
+    }
+
+    localStorage.setItem('dark-mode', !darkStylesheet || darkStylesheet.disabled ? 'false' : 'true');
+}
+
+// Проверяем предпочтения, сохраненные в localStorage
+if (localStorage.getItem('dark-mode') === 'true') {
+    const link = document.createElement('link');
+    link.id = 'dark-styles';
+    link.rel = 'stylesheet';
+    link.href = 'dark-styles.css';
+    document.head.appendChild(link);
+}
+
+// Добавляем обработчик для переключателя темы
+document.getElementById('themeToggle').addEventListener('change', toggleTheme);
