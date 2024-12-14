@@ -214,6 +214,16 @@ function generateQuiz() {
   return { single: selectedSingleQuestions, double: selectedDoubleQuestions };
 }
 
+// Ограничение выбора до двух вариантов для двуответных вопросов
+function limitCheckboxes(checkbox) {
+  const checkboxes = document.querySelectorAll(`input[name="${checkbox.name}"]`);
+  const checkedCheckboxes = Array.from(checkboxes).filter(cb => cb.checked);
+  
+  if (checkedCheckboxes.length > 2) {
+    checkbox.checked = false; // Просто отменяем выбор текущего чекбокса, если уже выбрано 2 варианта
+  }
+}
+
 // Проверка результатов
 function checkAnswers(questions) {
   let score = 0;
@@ -230,24 +240,17 @@ function checkAnswers(questions) {
   questions.double.forEach((q, index) => {
     const selectedOptions = Array.from(document.querySelectorAll(`input[name="q${index + 20}"]:checked`));
     const selectedValues = selectedOptions.map(option => option.value);
-    q.shuffledCorrectAnswer.forEach(correctIdx => {
-      if (selectedValues.includes(q.options[correctIdx])) {
-        score++;
+    let correctCount = 0;
+    q.correctAnswer.forEach(correct => {
+      if (selectedValues.includes(correct)) {
+        correctCount++;
       }
     });
+    
+    score += correctCount; // Добавляем по 1 баллу за каждый правильный ответ
   });
 
   return score;
-}
-
-// Ограничение выбора до двух вариантов для двуответных вопросов
-function limitCheckboxes(checkbox) {
-  const checkboxes = document.querySelectorAll(`input[name="${checkbox.name}"]`);
-  const checkedCheckboxes = Array.from(checkboxes).filter(cb => cb.checked);
-  
-  if (checkedCheckboxes.length > 2) {
-    checkedCheckboxes[0].checked = false; // Снимаем отметку с первого выбранного ответа
-  }
 }
 
 // Генерация вопросов
