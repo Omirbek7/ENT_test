@@ -200,7 +200,7 @@ function endQuiz() {
   // Добавляем текст результата и мотивационное сообщение
   resultContainer.innerHTML = `
     <p style="color: ${resultColor}; font-weight: bold;">
-      ${timeLeft < 0 ? "Время вышло!" : "Тест завершён!"} Вы набрали: ${score} из ${totalQuestions} (${percentage}%)
+      ${timeLeft < 0 ? "!" : "Тест завершён!"} Вы набрали: ${score} из ${totalQuestions} (${percentage}%)
     </p>
     <div class="progress-bar-container">${progressBar.outerHTML}</div>
     <p class="motivational-message">${motivationalMessage}</p>
