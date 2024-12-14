@@ -302,21 +302,17 @@ function checkAnswers(questions) {
     }
   });
 
-  // Проверка вопросов с двумя ответами
+// Проверка вопросов с двумя ответами
   questions.double.forEach((q, index) => {
     const selectedOptions = Array.from(document.querySelectorAll(`input[name="q${index + 20}"]:checked`));
     const selectedValues = selectedOptions.map(option => option.value);
-    const correctValues = q.options.filter((_, idx) => q.shuffledCorrectAnswer.includes(idx));
-
-    let correctCount = 0;
-    correctValues.forEach(correct => {
+    
+    // Проверяем каждый выбранный ответ и добавляем 1 балл за каждый правильный ответ
+    q.correctAnswer.forEach(correct => {
       if (selectedValues.includes(correct)) {
-        correctCount++;
+        score++;
       }
     });
-
-    // Добавляем баллы только за правильно выбранные ответы, максимум 2 балла за вопрос
-    score += Math.min(correctCount, 2);
   });
 
   return score;
