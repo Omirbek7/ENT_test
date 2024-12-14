@@ -147,6 +147,66 @@ function getRandomQuestions(questions, count = 20) {
   return shuffled.slice(0, Math.min(count, questions.length));
 }
 
+let timeLeft = 300; // Время в секундах (5 минут)
+let timerId;
+
+function updateTimerDisplay() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  document.getElementById('timer').textContent = `Осталось времени: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function countdown() {
+  timeLeft--;
+  updateTimerDisplay();
+
+  if (timeLeft < 0) {
+    clearInterval(timerId); // Останавливаем таймер
+    endQuiz();
+  }
+}
+
+function endQuiz() {
+  clearInterval(timerId); // Убедимся, что таймер остановлен
+  const score = checkAnswers(selectedQuestions);
+  const totalQuestions = selectedQuestions.single.length + selectedQuestions.double.length * 2;
+  const percentage = Math.round((score / totalQuestions) * 100);
+
+  document.getElementById("questions").innerHTML = ""; // Удаляем все вопросы
+
+  const resultContainer = document.getElementById("result");
+  resultContainer.innerHTML = "";
+
+  // Вычисление цвета в зависимости от результата
+  let resultColor = "";
+  let motivationalMessage = "";
+  if (percentage <= 65) {
+    resultColor = "red";
+    motivationalMessage = "Не расстраивайтесь! Попробуйте еще раз. Вы можете добиться большего!";
+  } else if (percentage <= 84) {
+    resultColor = "orange";
+    motivationalMessage = "Хороший результат! Но вы можете улучшить свои знания.";
+  } else {
+    resultColor = "green";
+    motivationalMessage = "Отлично! Вы хорошо разбираетесь в этом материале!";
+  }
+
+  // Создание полоски результата
+  const progressBar = document.createElement("div");
+  progressBar.classList.add("progress-bar");
+  progressBar.style.width = `${percentage}%`;
+  progressBar.style.backgroundColor = resultColor;
+
+  // Добавляем текст результата и мотивационное сообщение
+  resultContainer.innerHTML = `
+    <p style="color: ${resultColor}; font-weight: bold;">
+      ${timeLeft < 0 ? "Время вышло!" : "Тест завершён!"} Вы набрали: ${score} из ${totalQuestions} (${percentage}%)
+    </p>
+    <div class="progress-bar-container">${progressBar.outerHTML}</div>
+    <p class="motivational-message">${motivationalMessage}</p>
+  `;
+}
+
 // Генерация теста
 function generateQuiz() {
   const quizContainer = document.getElementById("questions");
@@ -211,7 +271,11 @@ function generateQuiz() {
     quizContainer.appendChild(questionDiv);
     q.shuffledCorrectAnswer = correctIndices; // Сохраняем индексы правильных ответов после перемешивания
   });
-
+  
+  // Устанавливаем таймер
+  updateTimerDisplay();
+  timerId = setInterval(countdown, 1000); // Запускаем таймер на 1 секунду
+  
   return { single: selectedSingleQuestions, double: selectedDoubleQuestions };
 }
 
@@ -261,39 +325,6 @@ function checkAnswers(questions) {
 const selectedQuestions = generateQuiz();
 
 document.getElementById("submit-btn").addEventListener("click", () => {
-  const score = checkAnswers(selectedQuestions);
-  const totalQuestions = selectedQuestions.single.length + selectedQuestions.double.length * 2; // Учитываем, что каждый двуответный вопрос дает 2 балла
-  const percentage = Math.round((score / totalQuestions) * 100);
-
-  const resultContainer = document.getElementById("result");
-  resultContainer.innerHTML = "";
-
-  // Вычисление цвета в зависимости от результата
-  let resultColor = "";
-  let motivationalMessage = "";
-  if (percentage <= 65) {
-    resultColor = "red";
-    motivationalMessage = "Не расстраивайтесь! Попробуйте еще раз. Вы можете добиться большего!";
-  } else if (percentage <= 84) {
-    resultColor = "orange";
-    motivationalMessage = "Хороший результат! Но вы можете улучшить свои знания.";
-  } else {
-    resultColor = "green";
-    motivationalMessage = "Отлично! Вы хорошо разбираетесь в этом материале!";
-  }
-
-  // Создание полоски результата
-  const progressBar = document.createElement("div");
-  progressBar.classList.add("progress-bar");
-  progressBar.style.width = `${percentage}%`;
-  progressBar.style.backgroundColor = resultColor;
-
-  // Добавляем текст результата и мотивационное сообщение
-  resultContainer.innerHTML = `
-    <p style="color: ${resultColor}; font-weight: bold;">
-      Вы набрали: ${score} из ${totalQuestions} (${percentage}%)
-    </p>
-    <div class="progress-bar-container">${progressBar.outerHTML}</div>
-    <p class="motivational-message">${motivationalMessage}</p>
-  `;
+  timeLeft = -1; // Это заставит таймер мгновенно истечь
+  countdown(); // Вызываем countdown для немедленного завершения теста
 });
