@@ -121,6 +121,21 @@ const questions = [
   } //24
 ];
 
+const doubleQuestions = [
+  {
+    question: "Какие гормоны вырабатываются гипофизом?",
+    options: ["Адреналин", "Гонадотропин", "Инсулин", "Пролактин"],
+    correctAnswer: ["Гонадотропин", "Пролактин"]
+  },
+  {
+    question: "Какие вещества являются основными компонентами ДНК?",
+    options: ["Глицерин", "Фосфат", "Цитозин", "Гуанин"],
+    correctAnswer: ["Фосфат", "Цитозин"]
+  },
+  // Добавьте еще 8 таких вопросов, чтобы в итоге было 10
+  // ...
+];
+
 // Перемешивание массива
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
@@ -135,11 +150,13 @@ function getRandomQuestions(questions, count = 20) {
 // Генерация теста
 function generateQuiz() {
   const quizContainer = document.getElementById("questions");
-  const selectedQuestions = getRandomQuestions(questions);
+  const selectedSingleQuestions = getRandomQuestions(questions, 20);
+  const selectedDoubleQuestions = getRandomQuestions(doubleQuestions, 10);
+  
   quizContainer.innerHTML = ""; // Очищаем контейнер перед заполнением
 
-  selectedQuestions.forEach((q, index) => {
-    // Перемешиваем варианты ответов
+  // Добавляем вопросы с одним правильным ответом
+  selectedSingleQuestions.forEach((q, index) => {
     const shuffledOptions = shuffleArray([...q.options]);
 
     const questionDiv = document.createElement("div");
@@ -163,24 +180,79 @@ function generateQuiz() {
     `;
 
     quizContainer.appendChild(questionDiv);
-
-    // Сохраняем правильный ответ для проверки
     q.shuffledCorrectAnswer = shuffledOptions.indexOf(q.correctAnswer);
   });
 
-  return selectedQuestions;
+  // Добавляем вопросы с двумя правильными ответами
+  selectedDoubleQuestions.forEach((q, index) => {
+    const shuffledOptions = shuffleArray([...q.options]);
+
+    const questionDiv = document.createElement("div");
+    questionDiv.classList.add("question");
+    questionDiv.innerHTML = `
+      <p>${index + 21}. ${q.question}</p>
+      <ul class="options">
+        ${shuffledOptions
+          .map(
+            (opt) => `
+          <li>
+            <label>
+              <input type="checkbox" name="q${index + 20}" value="${opt}" onchange="limitCheckboxes(this)">
+              ${opt}
+            </label>
+          </li>
+        `
+          )
+          .join("")}
+      </ul>
+    `;
+
+    quizContainer.appendChild(questionDiv);
+    q.shuffledCorrectAnswer = shuffledOptions.map((opt, idx) => q.correctAnswer.includes(opt) ? idx : null).filter(idx => idx !== null);
+  });
+
+  return { single: selectedSingleQuestions, double: selectedDoubleQuestions };
 }
 
 // Проверка результатов
 function checkAnswers(questions) {
   let score = 0;
-  questions.forEach((q, index) => {
+  
+  // Проверка вопросов с одним ответом
+  questions.single.forEach((q, index) => {
     const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
     if (selectedOption && selectedOption.value === q.correctAnswer) {
       score++;
     }
   });
+
+  // Проверка вопросов с двумя ответами
+  questions.double.forEach((q, index) => {
+    const selectedOptions = Array.from(document.querySelectorAll(`input[name="q${index + 20}"]:checked`));
+    const selectedValues = selectedOptions.map(option => option.value);
+    q.shuffledCorrectAnswer.forEach(correctIdx => {
+      if (selectedValues.includes(q.options[correctIdx])) {
+        score++;
+      }
+    });
+  });
+
   return score;
+}
+
+// Ограничение выбора до двух вариантов для двуответных вопросов
+function limitCheckboxes(checkbox) {
+  const form = checkbox.form;
+  const checkboxes = form.querySelectorAll(`input[name="${checkbox.name}"]`);
+  let checkedCount = 0;
+  checkboxes.forEach(cb => {
+    if (cb.checked && cb !== checkbox) {
+      checkedCount++;
+    }
+  });
+  if (checkedCount >= 2 && checkbox.checked) {
+    checkbox.checked = false;
+  }
 }
 
 // Генерация вопросов
@@ -188,7 +260,7 @@ const selectedQuestions = generateQuiz();
 
 document.getElementById("submit-btn").addEventListener("click", () => {
   const score = checkAnswers(selectedQuestions);
-  const totalQuestions = selectedQuestions.length;
+  const totalQuestions = selectedQuestions.single.length + selectedQuestions.double.length * 2; // Учитываем, что каждый двуответный вопрос дает 2 балла
   const percentage = Math.round((score / totalQuestions) * 100);
 
   const resultContainer = document.getElementById("result");
@@ -223,4 +295,3 @@ document.getElementById("submit-btn").addEventListener("click", () => {
     <p class="motivational-message">${motivationalMessage}</p>
   `;
 });
-
