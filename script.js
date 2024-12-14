@@ -192,7 +192,7 @@ function getRandomQuestions(questions, count = 30) {
   return shuffled.slice(0, Math.min(count, questions.length));
 }
 
-let timeLeft = 60; // Время в секундах (5 минут)
+let timeLeft = 300; // Время в секундах (5 минут)
 let timerId;
 
 function updateTimerDisplay() {
@@ -297,14 +297,14 @@ function generateQuiz() {
     const questionDiv = document.createElement("div");
     questionDiv.classList.add("question");
     questionDiv.innerHTML = `
-      <p>${index + 21}. ${q.question}</p>
+      <p>${index + 31}. ${q.question}</p>
       <ul class="options">
         ${shuffledOptions
           .map(
             (opt, optIndex) => `
           <li>
             <label>
-              <input type="checkbox" name="q${index + 20}" value="${opt}" onchange="limitCheckboxes(this)">
+              <input type="checkbox" name="q${index + 30}" value="${opt}" onchange="limitCheckboxes(this)">
               ${opt}
             </label>
           </li>
