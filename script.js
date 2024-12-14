@@ -242,16 +242,11 @@ function checkAnswers(questions) {
 
 // Ограничение выбора до двух вариантов для двуответных вопросов
 function limitCheckboxes(checkbox) {
-  const form = checkbox.form;
-  const checkboxes = form.querySelectorAll(`input[name="${checkbox.name}"]`);
-  let checkedCount = 0;
-  checkboxes.forEach(cb => {
-    if (cb.checked && cb !== checkbox) {
-      checkedCount++;
-    }
-  });
-  if (checkedCount >= 2 && checkbox.checked) {
-    checkbox.checked = false;
+  const checkboxes = document.querySelectorAll(`input[name="${checkbox.name}"]`);
+  const checkedCheckboxes = Array.from(checkboxes).filter(cb => cb.checked);
+  
+  if (checkedCheckboxes.length > 2) {
+    checkedCheckboxes[0].checked = false; // Снимаем отметку с первого выбранного ответа
   }
 }
 
