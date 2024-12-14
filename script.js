@@ -349,7 +349,7 @@ function checkAnswers(questions) {
 
 // Проверка вопросов с двумя ответами
   questions.double.forEach((q, index) => {
-    const selectedOptions = Array.from(document.querySelectorAll(`input[name="q${index + 20}"]:checked`));
+    const selectedOptions = Array.from(document.querySelectorAll(`input[name="q${index + 30}"]:checked`));
     const selectedValues = selectedOptions.map(option => option.value);
     
     // Проверяем каждый выбранный ответ и добавляем 1 балл за каждый правильный ответ
