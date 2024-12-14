@@ -173,6 +173,7 @@ function endQuiz() {
   const percentage = Math.round((score / totalQuestions) * 100);
 
   document.getElementById("questions").innerHTML = ""; // Удаляем все вопросы
+  document.getElementById("submit-btn").style.display = "none"; // Скрываем кнопку завершения
 
   const resultContainer = document.getElementById("result");
   resultContainer.innerHTML = "";
