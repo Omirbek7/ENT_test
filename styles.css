@@ -8,8 +8,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #e6f2ff, #ffffff);
-  }
+    background: url('https://img.freepik.com/free-vector/hand-drawn-science-background_23-2148544472.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
   
   /* Контейнер */
   .container {
