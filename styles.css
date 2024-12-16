@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('./bio_light.webp') no-repeat center center fixed;
+    background: #FFFFFF;
     background-size: cover;
 }
   
