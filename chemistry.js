@@ -6,13 +6,13 @@ const questions = [
     }, //1
     {
       question: "По теории Льюиса кислота",
-      options: ["Акцептор электронной пары", "Донор электронной пары", "При диссоциации выделяет H+", "При диссоциации выделяет OH-"],
+      options: ["Акцептор электронной пары", "Донор электронной пары", "При диссоциации выделяет H⁺", "При диссоциации выделяет OH⁻"],
       correctAnswer: "Акцептор электронной пары",
     }, //2
     {
       question: "Нелетучее, нерастворимое в воде вещество с высокой температурой плавления",
-      options: ["Cr2O3", "Cl2", "KCl", "Сахароза"],
-      correctAnswer: "Cr2O3",
+      options: ["Cr₂O₃", "Cl₂", "KCl", "Сахароза"],
+      correctAnswer: "Cr₂O₃",
     }, //3
     {
       question: "Не является представителем галогенов",
@@ -25,12 +25,12 @@ const questions = [
       correctAnswer: "4",
     }, //5
     {
-      question: "Fe -> FeCl2 -> FeCl3 -> X -> Fe2O3, найдите вещество X",
-      options: ["FeO", "Fe(OH)2", "Fe(OH)3", "FeSO4"],
-      correctAnswer: "Fe(OH)3",
+      question: "Fe -> FeCl₂ -> FeCl₃ -> X -> Fe₂O₃, найдите вещество X",
+      options: ["FeO", "Fe(OH)₂", "Fe(OH)₃", "FeSO₄"],
+      correctAnswer: "Fe(OH)₃",
     }, //6
     {
-      question: "Электронная конфигурация иона S-2",
+      question: "Электронная конфигурация иона S⁻²",
       options: ["s²p⁶", "s²p⁴", "s²p⁵", "s²d¹⁰p⁶"],
       correctAnswer: "s²p⁶",
     }, //7
@@ -45,7 +45,7 @@ const questions = [
       correctAnswer: "3 и 7",
     }, //9
     {
-      question: "Какое воздействие на систему смещает равновесие налево в реакции '2H2O <-> 2H2 + O2 - Q'",
+      question: "Какое воздействие на систему смещает равновесие налево в реакции '2H₂O <-> 2H₂ + O₂ - Q'",
       options: ["Добавление катализатора", "Повышение температуры", "Понижение температуры", "Увеличение концентрации воды"],
       correctAnswer: "Понижение температуры",
     }, //10
@@ -56,8 +56,8 @@ const questions = [
     }, //11
     {
       question: "Формула вещества, содержащего 32,4% натрия, 22,5% серы, 45,1% кислорода",
-      options: ["Na2S2O7", "NaSO3", "Na2SO4", "Na2S2O3"],
-      correctAnswer: "Na2SO4",
+      options: ["Na₂S₂O₇", "NaSO₃", "Na₂SO₄", "Na₂S₂O₃"],
+      correctAnswer: "Na₂SO₄",
     }, //12
     {
       question: "По принципу Паули максимальное количество электронов на третьем уровне равно",
@@ -66,11 +66,11 @@ const questions = [
     }, //13
     {
       question: "Соединение с sp³ гибридизацией",
-      options: ["OF2", "SO3", "NH3", "BeCl2"],
-      correctAnswer: "NH3",
+      options: ["OF₂", "SO₃", "NH₃", "BeCl₂"],
+      correctAnswer: "NH₃",
     }, //14
     {
-      question: "Количество -связей в молекуле 2-метилбутен-1",
+      question: "Количество σ-связей в молекуле 2-метилбутен-1",
       options: ["10", "14", "13", "12"],
       correctAnswer: "14",
     }, //15
@@ -81,8 +81,8 @@ const questions = [
     }, //16
     {
       question: "Углеводород имеющий относительную плотность по воздуху 2,345:",
-      options: ["C5H10", "C4H10", "C5H10", "C5H8"],
-      correctAnswer: "C5H8",
+      options: ["C₅H₁₀", "C₄H₁₀", "C₅H₁₀", "C₅H₈"],
+      correctAnswer: "C₅H₈",
     }, //17
     {
       question: "При повышении температуры с 50° до 110°C реакция ускоряется в 729 раз. Найдите температурный коэффициент:",
@@ -114,8 +114,8 @@ const questions = [
   const doubleQuestions = [
     {
       question: "Формула толуола?",
-      options: ["C9H12", "C8H10", "C6H5CH(CH3)2", "C8H8", "C6H5C3H7", "C7H8", "C6H5CH=CH2", "C6H5CH3"],
-      correctAnswer: ["C7H8", "C6H5CH3"]
+      options: ["C₉H₁₂", "C₈H₁₀", "C₆H₅CH(CH₃)₂", "C₈H₈", "C₆H₅C₃H₇", "C₇H₈", "C₆H₅CH=CH₂", "C₆H₅CH₃"],
+      correctAnswer: ["C₇H₈", "C₆H₅CH₃"]
     } //1 -
     // ...
   ];
