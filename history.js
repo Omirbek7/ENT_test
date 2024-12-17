@@ -144,7 +144,7 @@ function countdown() {
 function endQuiz() {
   clearInterval(timerId); // Убедимся, что таймер остановлен
   const score = checkAnswers(selectedQuestions);
-  const totalQuestions = selectedQuestions.single.length * 2;
+  const totalQuestions = selectedQuestions.single.length;
   const percentage = Math.round((score / totalQuestions) * 100);
 
   document.getElementById("questions").innerHTML = ""; // Удаляем все вопросы
