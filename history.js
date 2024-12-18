@@ -116,7 +116,7 @@ const questions = [
   }, //23
   {
     "question": "Как характеризуется период 1359-1379 гг в истории золотой орды?",
-    "options": ["Период расцвета", "Период войны с Тамерланом", "Период принятия мусульманства", "Период нового усиления", "\"Великая смута\""]
+    "options": ["Период расцвета", "Период войны с Тамерланом", "Период принятия мусульманства", "Период нового усиления", "Великая смута"]
     "correctAnswer": "Период расцвета"
   }, //24
   {
@@ -137,7 +137,7 @@ function getRandomQuestions(questions, count = 20) {
   return shuffled.slice(0, Math.min(count, questions.length));
 }
 
-let timeLeft = 2100; // Время в секундах (35 минут)
+let timeLeft = 1800; // Время в секундах (35 минут)
 let timerId;
 
 function updateTimerDisplay() {
