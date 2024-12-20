@@ -112,6 +112,12 @@ header h1 {
   left: 100%;
 }
 
+.highlight_yellow {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+
 .new-label {
   display: inline-block;
   margin-left: 5px; /* Расстояние от кнопки */
