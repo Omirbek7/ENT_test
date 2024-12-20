@@ -1,4 +1,3 @@
-/* Глобальные стили */
 body {
   background-color: #1a1a1a;
   color: #e6e6e6;
@@ -11,7 +10,6 @@ body {
   min-height: 100vh;
 }
 
-/* Контейнер для центрирования содержимого */
 .container {
   text-align: center;
   width: 100%;
@@ -20,15 +18,12 @@ body {
   box-sizing: border-box;
 }
 
-/* Стили для заголовков */
 header h1 {
   color: #4CAF50;
   margin-bottom: 20px;
 }
 
-/* Стили для кнопки */
 .button {
-  display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
   text-decoration: none;
@@ -40,22 +35,22 @@ header h1 {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: inline-flex; /* Чтобы выровнять метку по вертикали */
+  align-items: center; /* Вертикальное выравнивание содержимого */
+  justify-content: center; /* Горизонтальное выравнивание */
 }
 
-/* Эффект при наведении */
 .button:hover {
   background-color: #45a049;
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Эффект при нажатии */
 .button:active {
   background-color: #3e8e41;
   transform: scale(0.98);
 }
 
-/* Анимация для подсветки */
 .button::before {
   content: '';
   position: absolute;
@@ -72,7 +67,21 @@ header h1 {
   left: 100%;
 }
 
-/* Стили для футера */
+.new-label {
+  display: inline-block;
+  margin-left: 10px; /* Расстояние от кнопки */
+  padding: 0 10px; /* Отступы внутри метки */
+  font-size: 18px;
+  font-weight: bold;
+  color: #cccccc; /* Серый цвет текста */
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid #cccccc; /* Серый ободок */
+  border-radius: 15px; /* Округлённые края */
+  line-height: 1.6; /* Вертикальное выравнивание текста */
+  height: 30px; /* Высота метки совпадает с высотой кнопки */
+  text-align: center;
+}
+
 footer {
   margin-top: 50px;
   color: #999;
@@ -80,17 +89,4 @@ footer {
 
 footer h4 {
   font-size: 14px;
-}
-
-.new-label {
-    display: inline-block;
-    margin-left: 10px; /* Расстояние от кнопки */
-    padding: 5px 10px;
-    background-color: red;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 15px; /* Округленные края */
-    text-align: center;
-    vertical-align: middle;
 }
