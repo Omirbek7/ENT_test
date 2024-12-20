@@ -67,9 +67,54 @@ header h1 {
   left: 100%;
 }
 
+.button-2 {
+  padding: 10px 20px;
+  margin-left: 70px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex; /* Чтобы выровнять метку по вертикали */
+  align-items: center; /* Вертикальное выравнивание содержимого */
+  justify-content: center; /* Горизонтальное выравнивание */
+}
+
+.button-2:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.button-2:active {
+  background-color: #3e8e41;
+  transform: scale(0.98);
+}
+
+.button-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-45deg);
+  transition: all 0.5s ease;
+}
+
+.button-2:hover::before {
+  left: 100%;
+}
+
 .new-label {
   display: inline-block;
-  margin-left: 10px; /* Расстояние от кнопки */
+  margin-left: 5px; /* Расстояние от кнопки */
   padding: 0 10px; /* Отступы внутри метки */
   font-size: 18px;
   font-weight: bold;
