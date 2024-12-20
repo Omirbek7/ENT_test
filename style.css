@@ -81,3 +81,16 @@ footer {
 footer h4 {
   font-size: 14px;
 }
+
+.new-label {
+    display: inline-block;
+    margin-left: 10px; /* Расстояние от кнопки */
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 15px; /* Округленные края */
+    text-align: center;
+    vertical-align: middle;
+}
