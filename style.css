@@ -23,7 +23,9 @@ header h1 {
   margin-bottom: 20px;
 }
 
-.button, .button-3, .button-4 {
+.button,
+.button-3,
+.button-4 {
   padding: 10px 20px;
   font-size: 16px;
   text-decoration: none;
@@ -40,18 +42,24 @@ header h1 {
   justify-content: center; /* Горизонтальное выравнивание */
 }
 
-.button:hover, .button-3:hover, .button-4:hover {
+.button:hover,
+.button-3:hover,
+.button-4:hover {
   background-color: #45a049;
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-.button:active, .button-3:active, .button-4:active {
+.button:active,
+.button-3:active,
+.button-4:active {
   background-color: #3e8e41;
   transform: scale(0.98);
 }
 
-.button::before, .button-3::before, .button-4::before {
+.button::before,
+.button-3::before,
+.button-4::before {
   content: '';
   position: absolute;
   top: 0;
@@ -63,7 +71,9 @@ header h1 {
   transition: all 0.5s ease;
 }
 
-.button:hover::before, .button-3:hover::befre, .button-4:hover::before {
+.button:hover::before,
+.button-3:hover::befre,
+.button-4:hover::before {
   left: 100%;
 }
 
