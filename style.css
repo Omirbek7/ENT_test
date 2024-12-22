@@ -161,21 +161,25 @@ pre header {
   font-weight: bold;
   color: #4CAF50;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 pre h2 {
   font-size: 25px;
   color: #f5a623;
   margin-top: 10px;
-  margin-bottom: 5px;
 }
 
 pre h4 {
   font-size: 20px;
   text-align: center;
   color: #fafafa; /* Updated color */
-  margin: 5px 0;
+  margin: 1px 0;
+}
+
+pre a {
+  text-align: center;
+  justify-content: center;
 }
 
 .button-3 {
@@ -190,7 +194,7 @@ pre h4 {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  display: inline-flex; /* Чтобы выровнять метку по вертикали */
+  display: flex; /* Чтобы выровнять метку по вертикали */
   align-items: center; /* Вертикальное выравнивание содержимого */
   justify-content: center; /* Горизонтальное выравнивание */
 }
@@ -219,49 +223,5 @@ pre h4 {
 }
 
 .button-3:hover::before {
-  left: 100%;
-}
-
-.button-4 {
-  padding: 10px 20px;
-  font-size: 16px;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #8B0000;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  display: inline-flex; /* Чтобы выровнять метку по вертикали */
-  align-items: center; /* Вертикальное выравнивание содержимого */
-  justify-content: center; /* Горизонтальное выравнивание */
-}
-
-.button-4:hover {
-  background-color: #800000;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.button-4:active {
-  background-color: #C71585;
-  transform: scale(0.98);
-}
-
-.button-4::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: skewX(-45deg);
-  transition: all 0.5s ease;
-}
-
-.button-4:hover::before {
   left: 100%;
 }
