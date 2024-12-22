@@ -141,3 +141,40 @@ footer {
 footer h4 {
   font-size: 14px;
 }
+
+/* Common button style */
+.button-3,
+.button-4 {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for button-3 */
+.button-3 {
+  background-color: #2b7a78;
+  color: #f6f6f6;
+}
+.button-3:hover {
+  background-color: #3aafa9;
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Style for button-4 */
+.button-4 {
+  background-color: #d90429;
+  color: #ffffff;
+}
+.button-4:hover {
+  background-color: #ef233c;
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
