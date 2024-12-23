@@ -54,25 +54,39 @@
         .example {
             margin-left: 20px;
         }
-        .date{
+        .date {
             text-align: right;
             font-style: italic;
+            font-size: 0.9em; /* Уменьшаем размер даты на мобильных */
+        }
+
+        .conspect-block {
+            border: 1px solid #4CAF50;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #222;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .conspect-block h1 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
         }
 
         .structure {
             display: flex;
-            flex-direction: column; /* Размещение элементов структуры друг под другом */
-            align-items: center;     /* Центрирование по горизонтали */
+            flex-direction: column;
+            align-items: center;
             margin-top: 1em;
             margin-bottom: 1em;
         }
-        .structure img{
-            max-width: 500px;
-        }
 
-        .structure-image {
-            max-width: 500px; /* Adjust as needed */
-            margin-top: 10px;
+        .structure img, .structure-image {
+            max-width: 90%; /* Адаптивный размер изображений */
+            height: auto;
+            display: block; /* Убираем лишний отступ под изображением */
+            margin: 0 auto; /* Центрирование изображения */
         }
         .aniline-structures{
             display: flex;
@@ -81,7 +95,33 @@
         }
 
         p {
-            font-size: 18px;
+            font-size: 16px; /* Уменьшаем размер шрифта для мобильных */
+        }
+
+        /* Медиазапросы для адаптивного дизайна */
+        @media (max-width: 768px) { /* Для экранов меньше 768px (планшеты и телефоны) */
+            body {
+                margin: 10px; /* Уменьшаем отступы */
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+            p {
+                font-size: 14px;
+            }
+            .aniline-structures{
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         .conspect-block { /* Общие стили для блоков конспектов */
