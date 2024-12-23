@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; /* Добавлено, чтобы элементы выстраивались вертикально */
   min-height: 100vh;
 }
 
@@ -154,6 +155,8 @@ pre {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border: 1px solid #3a3a3a;
+  width: 100%;
+  max-width: 800px;
 }
 
 pre header {
@@ -177,16 +180,13 @@ pre h4 {
   margin: 1px 0;
 }
 
-pre a {
-  text-align: center;
-  justify-content: center;
-}
-
 .button-3 {
   padding: 10px 20px;
+  max-width: max-content;
   font-size: 16px;
   text-decoration: none;
   color: #ffffff;
+  text-align: center;
   background-color: #8B0000;
   border: none;
   border-radius: 4px;
@@ -194,9 +194,10 @@ pre a {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  display: flex; /* Чтобы выровнять метку по вертикали */
   align-items: center; /* Вертикальное выравнивание содержимого */
   justify-content: center; /* Горизонтальное выравнивание */
+  margin: 0 auto; /* Центрирование по горизонтали */
+  display: block; /* Делаем элемент блочным, чтобы `margin: auto` работал */
 }
 
 .button-3:hover {
