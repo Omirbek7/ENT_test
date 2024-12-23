@@ -24,6 +24,11 @@ header h1 {
   margin-bottom: 20px;
 }
 
+.head {
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
 .button {
   padding: 10px 20px;
   font-size: 16px;
@@ -144,19 +149,35 @@ footer h4 {
 }
 
 pre {
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px; /* Уменьшаем размер шрифта для лучшей читаемости */
+  font-family: monospace; /* Моноширинный шрифт для сохранения форматирования */
   color: #e0e0e0;
   background-color: #2c2c2c;
   white-space: pre-wrap;
   word-wrap: break-word;
-  margin: 15px 0; /* Ensure each <pre> block is spaced below the other */
+  margin: 15px auto; /* Центрирование блока */
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border: 1px solid #3a3a3a;
-  width: 100%;
-  max-width: 550px;
+  width: 90%; /* Задаем ширину в процентах */
+  max-width: 1200px; /* Максимальная ширина на больших экранах */
+  box-sizing: border-box; /* Важно для корректного расчета ширины с padding и border */
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+  pre {
+      width: 90%; /* На мобильных устройствах 90% */
+      font-size: 14px;
+      padding: 10px;
+  }
+}
+
+@media (max-width: 480px) { /* Для совсем маленьких экранов */
+  pre {
+      width: 95%; /* Ещё немного уменьшаем ширину */
+  }
 }
 
 pre header {
@@ -170,7 +191,6 @@ pre header {
 pre h2 {
   font-size: 25px;
   color: #f5a623;
-  margin-left: 7px;
   margin-top: 10px;
 }
 
