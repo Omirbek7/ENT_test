@@ -159,7 +159,7 @@ pre {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  border: 1px solid #3a3a3a;
+  border: 1px solid #4CAF50;
   width: 90%; /* Задаем ширину в процентах */
   max-width: 1200px; /* Максимальная ширина на больших экранах */
   box-sizing: border-box; /* Важно для корректного расчета ширины с padding и border */
@@ -186,6 +186,7 @@ pre header {
   color: #4CAF50;
   text-align: center;
   margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
 }
 
 pre h2 {
