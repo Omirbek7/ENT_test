@@ -1,14 +1,14 @@
 /* Основной стиль для всей страницы */
 body {
     font-family: 'Arial', sans-serif;
-    color: #333;
+    color: #e6e6e6;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #EAEAEA;
+    background-color: #1a1a1a;
     background-size: cover;
 }
   
@@ -16,7 +16,7 @@ body {
   .container {
     width: 90%;
     max-width: 800px;
-    background: #ffffff;
+    background: #000000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
@@ -32,7 +32,7 @@ body {
   header h1 {
     font-size: 24px;
     margin: 0;
-    color: #2c7be5;
+    color: #4CAF50;
   }
   
   /* Основной блок вопросов */
@@ -77,8 +77,8 @@ body {
   }
   
   button {
-    background: #2c7be5;
-    color: #ffffff;
+    background: #e0ffff;
+    color: #2f4f4f;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -88,7 +88,7 @@ body {
   }
   
   button:hover {
-    background: #2563c7;
+    background: #4682b4;
   }
   
   #result {
