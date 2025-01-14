@@ -71,8 +71,8 @@ const questions = [
     }, //14
     {
       question: "Устав 1824г. позволил",
-      options: ["Отменить ханскую власть в старшем жузе", "Отметить ханскую власть в среднем жузе", "Отметить ханскую власть в младшем жузе", "Отметить ханскую власть в старшем и среднем жузе"],
-      correctAnswer: "Отметить ханскую власть в младшем жузе",
+      options: ["Отменить ханскую власть в старшем жузе", "Отменить ханскую власть в среднем жузе", "Отменить ханскую власть в младшем жузе", "Отменить ханскую власть в старшем и среднем жузе"],
+      correctAnswer: "Отменить ханскую власть в младшем жузе",
     }, //15
     {
       question: "Назовите столицу монгольской империи при Чингисхане",
@@ -196,7 +196,7 @@ const questions = [
     return shuffled.slice(0, Math.min(count, questions.length));
   }
   
-  let timeLeft = 1800; // Время в секундах (35 минут)
+  let timeLeft = 1200; // Время в секундах (20 минут)
   let timerId;
   
   function updateTimerDisplay() {
@@ -323,32 +323,3 @@ const questions = [
   });
   
   // ... (ваш существующий код)
-  
-  // Функция для переключения темы
-  function toggleTheme() {
-    const darkStylesheet = document.getElementById('dark-styles');
-    
-    if (darkStylesheet) {
-        darkStylesheet.disabled = !darkStylesheet.disabled;
-    } else {
-        const link = document.createElement('link');
-        link.id = 'dark-styles';
-        link.rel = 'stylesheet';
-        link.href = 'dark-styles.css';
-        document.head.appendChild(link);
-    }
-  
-    localStorage.setItem('dark-mode', !darkStylesheet || darkStylesheet.disabled ? 'false' : 'true');
-  }
-  
-  // Проверяем предпочтения, сохраненные в localStorage
-  if (localStorage.getItem('dark-mode') === 'true') {
-    const link = document.createElement('link');
-    link.id = 'dark-styles';
-    link.rel = 'stylesheet';
-    link.href = 'dark-styles.css';
-    document.head.appendChild(link);
-  }
-  
-  // Добавляем обработчик для переключателя темы
-  document.getElementById('themeToggle').addEventListener('change', toggleTheme);
